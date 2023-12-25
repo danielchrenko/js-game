@@ -78,6 +78,12 @@ function updateGameArea() {
 	myGamePiece.newPos();
 	myGamePiece.update();
 	
+	var text = "X: " + myGamePiece.x + " Y: " + myGamePiece.y;
+	
+	ctx = myGameArea.context;
+	ctx.fillStyle = "black";
+	ctx.fillText(text, 30, 30);
+	
 	console.log(myGamePiece.speedY, myGamePiece.speedX, myGamePiece.y, myGamePiece.x);
 
 	if (myGameArea.key && myGameArea.key === "ArrowUp") {
