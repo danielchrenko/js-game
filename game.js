@@ -1,9 +1,17 @@
 var myGamePiece;
+var pikachu;
 
 
 function startGame() {
 	myGameArea.start();
-	myGamePiece = new component(140, 10, "red", 10, 120);
+	// myGamePiece = new component(20, 20, "red", 120, 120);
+	
+	pikachu = new Image();
+    pikachu.src = 'pikachu.png'
+	
+	pikachu.onload = function() {
+		myGamePiece = new sprite(pikachu, 120, 120);
+	};
 }
 
 var myGameArea = {
@@ -46,6 +54,23 @@ function component(width, height, color, x, y) {
 		this.x += this.speedX;
 		this.y += this.speedY;
 	}
+}
+
+function sprite(image, x, y) {
+	this.image = image;
+	this.x = x;
+	this.y = y;
+	this.speedX = 0;
+	this.speedY = 0;
+	this.update = function(){
+		ctx = myGameArea.context;
+		ctx.drawImage(this.image, this.x, this.y);
+	}
+	this.newPos = function() {
+		this.x += this.speedX;
+		this.y += this.speedY;
+	}
+	
 }
 
 function updateGameArea() {
