@@ -1,0 +1,16 @@
+notes: using vim
+
+sprite is a constructor function
+in sprite we establish functions:
+update
+newPos
+
+update is used to update the canvas, on each frame everything gets deleted
+so we call update to redraw all the sprites on each frame in order
+to simulate movement
+
+in this case for sprite, an image is used instead of the params to draw a rect
+
+speed work same way as comp speed did
+
+next add animations
